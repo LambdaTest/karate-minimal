@@ -1,0 +1,751 @@
+17:46:26.197 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:57684
+17:46:27.053 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+17:46:31.139 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:57684/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:57684
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+17:46:31.969 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [193 ms]
+17:46:32.113 [main] DEBUG com.intuit.karate - response time in milliseconds: 970
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 12:16:32 GMT
+{"title":"First","complete":false,"id":"fecb607d-702b-4986-a6db-9d7e28fea00c"}
+
+17:46:32.186 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:57684/api/todos/fecb607d-702b-4986-a6db-9d7e28fea00c
+2 > Host: localhost:57684
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+17:46:32.271 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/fecb607d-702b-4986-a6db-9d7e28fea00c 200 [66 ms]
+17:46:32.275 [main] DEBUG com.intuit.karate - response time in milliseconds: 86
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 12:16:32 GMT
+{"title":"First","complete":false,"id":"fecb607d-702b-4986-a6db-9d7e28fea00c"}
+
+17:46:32.286 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:57684/api/todos
+3 > Host: localhost:57684
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+17:46:32.344 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [48 ms]
+17:46:32.347 [main] DEBUG com.intuit.karate - response time in milliseconds: 60
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 12:16:32 GMT
+[{"title":"First","complete":false,"id":"fecb607d-702b-4986-a6db-9d7e28fea00c"}]
+
+17:46:32.365 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:57684/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:57684
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+17:46:32.423 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [45 ms]
+17:46:32.426 [main] DEBUG com.intuit.karate - response time in milliseconds: 61
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 12:16:32 GMT
+{"title":"Second","complete":false,"id":"c9e0d606-cbb2-49ff-8ad5-d98e9d72f311"}
+
+17:46:32.436 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+17:46:32.440 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:57684/api/todos
+5 > Host: localhost:57684
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+17:46:32.495 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [40 ms]
+17:46:32.498 [main] DEBUG com.intuit.karate - response time in milliseconds: 57
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 12:16:32 GMT
+[{"title":"First","complete":false,"id":"fecb607d-702b-4986-a6db-9d7e28fea00c"},{"title":"Second","complete":false,"id":"c9e0d606-cbb2-49ff-8ad5-d98e9d72f311"}]
+
+17:46:34.653 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+17:57:55.275 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:51834
+17:57:55.981 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+17:57:55.994 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716553675983
+17:58:01.444 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:51834/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:51834
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+17:58:02.541 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [213 ms]
+17:58:02.589 [main] DEBUG com.intuit.karate - response time in milliseconds: 1140
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 12:28:02 GMT
+{"title":"First","complete":false,"id":"56eb8d47-0505-4661-9ad2-2c1bfacedaa4"}
+
+17:58:02.647 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:51834/api/todos/56eb8d47-0505-4661-9ad2-2c1bfacedaa4
+2 > Host: localhost:51834
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+17:58:02.728 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/56eb8d47-0505-4661-9ad2-2c1bfacedaa4 200 [68 ms]
+17:58:02.731 [main] DEBUG com.intuit.karate - response time in milliseconds: 83
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 12:28:02 GMT
+{"title":"First","complete":false,"id":"56eb8d47-0505-4661-9ad2-2c1bfacedaa4"}
+
+17:58:02.743 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:51834/api/todos
+3 > Host: localhost:51834
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+17:58:02.808 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [49 ms]
+17:58:02.811 [main] DEBUG com.intuit.karate - response time in milliseconds: 67
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 12:28:02 GMT
+[{"title":"First","complete":false,"id":"56eb8d47-0505-4661-9ad2-2c1bfacedaa4"}]
+
+17:58:02.826 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:51834/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:51834
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+17:58:02.881 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [37 ms]
+17:58:02.883 [main] DEBUG com.intuit.karate - response time in milliseconds: 56
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 12:28:02 GMT
+{"title":"Second","complete":false,"id":"830b38ef-d206-45d4-86f5-06b32ea04bfd"}
+
+17:58:02.887 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+17:58:02.890 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:51834/api/todos
+5 > Host: localhost:51834
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+17:58:02.934 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [33 ms]
+17:58:02.937 [main] DEBUG com.intuit.karate - response time in milliseconds: 44
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 12:28:02 GMT
+[{"title":"First","complete":false,"id":"56eb8d47-0505-4661-9ad2-2c1bfacedaa4"},{"title":"Second","complete":false,"id":"830b38ef-d206-45d4-86f5-06b32ea04bfd"}]
+
+17:58:05.722 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+18:00:27.787 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:54257
+18:00:28.126 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+18:00:28.131 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716553828128
+18:00:30.308 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:54257/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:54257
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+18:00:30.771 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [114 ms]
+18:00:30.810 [main] DEBUG com.intuit.karate - response time in milliseconds: 498
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 12:30:30 GMT
+{"title":"First","complete":false,"id":"6f671aae-9030-44a9-b397-f6267a05db75"}
+
+18:00:30.883 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:54257/api/todos/6f671aae-9030-44a9-b397-f6267a05db75
+2 > Host: localhost:54257
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+18:00:31.021 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/6f671aae-9030-44a9-b397-f6267a05db75 200 [106 ms]
+18:00:31.029 [main] DEBUG com.intuit.karate - response time in milliseconds: 145
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 12:30:31 GMT
+{"title":"First","complete":false,"id":"6f671aae-9030-44a9-b397-f6267a05db75"}
+
+18:00:31.056 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:54257/api/todos
+3 > Host: localhost:54257
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+18:00:31.194 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [123 ms]
+18:00:31.199 [main] DEBUG com.intuit.karate - response time in milliseconds: 134
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 12:30:31 GMT
+[{"title":"First","complete":false,"id":"6f671aae-9030-44a9-b397-f6267a05db75"}]
+
+18:00:31.212 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:54257/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:54257
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+18:00:31.264 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [40 ms]
+18:00:31.270 [main] DEBUG com.intuit.karate - response time in milliseconds: 58
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 12:30:31 GMT
+{"title":"Second","complete":false,"id":"b5e7ce73-04da-4cdb-b972-46b7b388c9ad"}
+
+18:00:31.277 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+18:00:31.301 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:54257/api/todos
+5 > Host: localhost:54257
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+18:00:31.341 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [32 ms]
+18:00:31.362 [main] DEBUG com.intuit.karate - response time in milliseconds: 59
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 12:30:31 GMT
+[{"title":"First","complete":false,"id":"6f671aae-9030-44a9-b397-f6267a05db75"},{"title":"Second","complete":false,"id":"b5e7ce73-04da-4cdb-b972-46b7b388c9ad"}]
+
+18:00:32.193 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+18:22:52.460 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:58116
+18:22:53.191 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+18:22:53.206 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716555173193
+18:22:57.056 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:58116/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:58116
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+18:22:57.914 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [198 ms]
+18:22:57.973 [main] DEBUG com.intuit.karate - response time in milliseconds: 912
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 12:52:57 GMT
+{"title":"First","complete":false,"id":"733e0463-258a-4c7d-98e9-7126ca5e352f"}
+
+18:22:58.045 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:58116/api/todos/733e0463-258a-4c7d-98e9-7126ca5e352f
+2 > Host: localhost:58116
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+18:22:58.288 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/733e0463-258a-4c7d-98e9-7126ca5e352f 200 [224 ms]
+18:22:58.292 [main] DEBUG com.intuit.karate - response time in milliseconds: 246
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 12:52:58 GMT
+{"title":"First","complete":false,"id":"733e0463-258a-4c7d-98e9-7126ca5e352f"}
+
+18:22:58.304 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:58116/api/todos
+3 > Host: localhost:58116
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+18:22:58.376 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [53 ms]
+18:22:58.379 [main] DEBUG com.intuit.karate - response time in milliseconds: 74
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 12:52:58 GMT
+[{"title":"First","complete":false,"id":"733e0463-258a-4c7d-98e9-7126ca5e352f"}]
+
+18:22:58.397 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:58116/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:58116
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+18:22:58.457 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [46 ms]
+18:22:58.459 [main] DEBUG com.intuit.karate - response time in milliseconds: 61
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 12:52:58 GMT
+{"title":"Second","complete":false,"id":"be0961dc-4b64-4186-b93b-8b4d81c470f2"}
+
+18:22:58.464 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+18:22:58.467 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:58116/api/todos
+5 > Host: localhost:58116
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+18:22:58.523 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [44 ms]
+18:22:58.526 [main] DEBUG com.intuit.karate - response time in milliseconds: 58
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 12:52:58 GMT
+[{"title":"First","complete":false,"id":"733e0463-258a-4c7d-98e9-7126ca5e352f"},{"title":"Second","complete":false,"id":"be0961dc-4b64-4186-b93b-8b4d81c470f2"}]
+
+18:23:00.533 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+18:26:39.743 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:61027
+18:26:40.981 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+18:26:41.100 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716555401064
+18:26:50.023 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:61027/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:61027
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+18:26:51.513 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [373 ms]
+18:26:51.605 [main] DEBUG com.intuit.karate - response time in milliseconds: 1576
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 12:56:51 GMT
+{"title":"First","complete":false,"id":"a721f27d-fa6b-48a3-95cb-a8da5989a337"}
+
+18:26:51.709 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:61027/api/todos/a721f27d-fa6b-48a3-95cb-a8da5989a337
+2 > Host: localhost:61027
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+18:26:51.835 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/a721f27d-fa6b-48a3-95cb-a8da5989a337 200 [114 ms]
+18:26:51.839 [main] DEBUG com.intuit.karate - response time in milliseconds: 128
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 12:56:51 GMT
+{"title":"First","complete":false,"id":"a721f27d-fa6b-48a3-95cb-a8da5989a337"}
+
+18:26:51.912 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:61027/api/todos
+3 > Host: localhost:61027
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+18:26:51.965 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [42 ms]
+18:26:51.968 [main] DEBUG com.intuit.karate - response time in milliseconds: 55
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 12:56:51 GMT
+[{"title":"First","complete":false,"id":"a721f27d-fa6b-48a3-95cb-a8da5989a337"}]
+
+18:26:51.989 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:61027/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:61027
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+18:26:52.073 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [51 ms]
+18:26:52.077 [main] DEBUG com.intuit.karate - response time in milliseconds: 86
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 12:56:52 GMT
+{"title":"Second","complete":false,"id":"ef69bd3f-402d-4be4-8fdf-22dd94bba340"}
+
+18:26:52.082 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+18:26:52.086 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:61027/api/todos
+5 > Host: localhost:61027
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+18:26:52.260 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [37 ms]
+18:26:52.264 [main] DEBUG com.intuit.karate - response time in milliseconds: 176
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 12:56:52 GMT
+[{"title":"First","complete":false,"id":"a721f27d-fa6b-48a3-95cb-a8da5989a337"},{"title":"Second","complete":false,"id":"ef69bd3f-402d-4be4-8fdf-22dd94bba340"}]
+
+18:26:57.193 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+18:31:36.256 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:64510
+18:31:38.517 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+18:31:38.551 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716555698520
+18:31:49.545 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:64510/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:64510
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+18:31:50.929 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [403 ms]
+18:31:51.170 [main] DEBUG com.intuit.karate - response time in milliseconds: 1618
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 13:01:50 GMT
+{"title":"First","complete":false,"id":"1d1114a3-a3eb-47f8-b0d8-10abfb616973"}
+
+18:31:51.348 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:64510/api/todos/1d1114a3-a3eb-47f8-b0d8-10abfb616973
+2 > Host: localhost:64510
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+18:31:51.706 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/1d1114a3-a3eb-47f8-b0d8-10abfb616973 200 [343 ms]
+18:31:51.797 [main] DEBUG com.intuit.karate - response time in milliseconds: 448
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 13:01:51 GMT
+{"title":"First","complete":false,"id":"1d1114a3-a3eb-47f8-b0d8-10abfb616973"}
+
+18:31:51.812 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:64510/api/todos
+3 > Host: localhost:64510
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+18:31:51.968 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [142 ms]
+18:31:51.974 [main] DEBUG com.intuit.karate - response time in milliseconds: 160
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 13:01:51 GMT
+[{"title":"First","complete":false,"id":"1d1114a3-a3eb-47f8-b0d8-10abfb616973"}]
+
+18:31:52.003 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:64510/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:64510
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+18:31:52.279 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [221 ms]
+18:31:52.367 [main] DEBUG com.intuit.karate - response time in milliseconds: 331
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 13:01:52 GMT
+{"title":"Second","complete":false,"id":"c5391766-c5b1-4b0d-920c-dc6cfb55f65d"}
+
+18:31:52.373 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+18:31:52.379 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:64510/api/todos
+5 > Host: localhost:64510
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+18:31:52.518 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [125 ms]
+18:31:52.522 [main] DEBUG com.intuit.karate - response time in milliseconds: 141
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 13:01:52 GMT
+[{"title":"First","complete":false,"id":"1d1114a3-a3eb-47f8-b0d8-10abfb616973"},{"title":"Second","complete":false,"id":"c5391766-c5b1-4b0d-920c-dc6cfb55f65d"}]
+
+18:31:59.796 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+18:36:38.774 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:51898
+18:36:39.422 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+18:36:39.432 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716555999424
+18:36:43.742 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:51898/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:51898
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+18:36:45.095 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [188 ms]
+18:36:45.142 [main] DEBUG com.intuit.karate - response time in milliseconds: 1396
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 13:06:45 GMT
+{"title":"First","complete":false,"id":"d5aa57ba-4576-4a10-bc75-3e1a3e47babc"}
+
+18:36:45.197 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:51898/api/todos/d5aa57ba-4576-4a10-bc75-3e1a3e47babc
+2 > Host: localhost:51898
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+18:36:45.277 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/d5aa57ba-4576-4a10-bc75-3e1a3e47babc 200 [66 ms]
+18:36:45.280 [main] DEBUG com.intuit.karate - response time in milliseconds: 82
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 13:06:45 GMT
+{"title":"First","complete":false,"id":"d5aa57ba-4576-4a10-bc75-3e1a3e47babc"}
+
+18:36:45.289 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:51898/api/todos
+3 > Host: localhost:51898
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+18:36:45.341 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [42 ms]
+18:36:45.344 [main] DEBUG com.intuit.karate - response time in milliseconds: 54
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 13:06:45 GMT
+[{"title":"First","complete":false,"id":"d5aa57ba-4576-4a10-bc75-3e1a3e47babc"}]
+
+18:36:45.358 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:51898/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:51898
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+18:36:45.422 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [49 ms]
+18:36:45.426 [main] DEBUG com.intuit.karate - response time in milliseconds: 67
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 13:06:45 GMT
+{"title":"Second","complete":false,"id":"1039b4d3-24ae-43c1-a5d6-2439a89d557b"}
+
+18:36:45.433 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+18:36:45.438 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:51898/api/todos
+5 > Host: localhost:51898
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+18:36:45.549 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [39 ms]
+18:36:45.553 [main] DEBUG com.intuit.karate - response time in milliseconds: 113
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 13:06:45 GMT
+[{"title":"First","complete":false,"id":"d5aa57ba-4576-4a10-bc75-3e1a3e47babc"},{"title":"Second","complete":false,"id":"1039b4d3-24ae-43c1-a5d6-2439a89d557b"}]
+
+18:36:48.197 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
+18:39:47.094 [main] DEBUG com.intuit.karate.http.HttpServer - server started: lt-mbp-021.local:54205
+18:39:47.863 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+18:39:47.878 [main] INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1716556187865
+18:39:51.975 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:54205/api/todos
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 34
+1 > Host: localhost:54205
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+1 > Accept-Encoding: gzip,deflate
+{"title":"First","complete":false}
+
+18:39:52.947 [armeria-common-worker-kqueue-3-1] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [205 ms]
+18:39:52.992 [main] DEBUG com.intuit.karate - response time in milliseconds: 1012
+1 < 200
+1 < content-type: application/json
+1 < content-length: 78
+1 < server: Armeria/1.25.2
+1 < date: Fri, 24 May 2024 13:09:52 GMT
+{"title":"First","complete":false,"id":"fa24018f-ebe6-4bc5-b7e7-3303f452c711"}
+
+18:39:53.057 [main] DEBUG com.intuit.karate - request:
+2 > GET http://localhost:54205/api/todos/fa24018f-ebe6-4bc5-b7e7-3303f452c711
+2 > Host: localhost:54205
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+2 > Accept-Encoding: gzip,deflate
+
+
+18:39:53.126 [armeria-common-worker-kqueue-3-2] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos/fa24018f-ebe6-4bc5-b7e7-3303f452c711 200 [56 ms]
+18:39:53.129 [main] DEBUG com.intuit.karate - response time in milliseconds: 72
+2 < 200
+2 < content-type: application/json
+2 < content-length: 78
+2 < server: Armeria/1.25.2
+2 < date: Fri, 24 May 2024 13:09:53 GMT
+{"title":"First","complete":false,"id":"fa24018f-ebe6-4bc5-b7e7-3303f452c711"}
+
+18:39:53.139 [main] DEBUG com.intuit.karate - request:
+3 > GET http://localhost:54205/api/todos
+3 > Host: localhost:54205
+3 > Connection: Keep-Alive
+3 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+3 > Accept-Encoding: gzip,deflate
+
+
+18:39:53.181 [armeria-common-worker-kqueue-3-3] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [33 ms]
+18:39:53.184 [main] DEBUG com.intuit.karate - response time in milliseconds: 44
+3 < 200
+3 < content-type: application/json
+3 < content-length: 80
+3 < server: Armeria/1.25.2
+3 < date: Fri, 24 May 2024 13:09:53 GMT
+[{"title":"First","complete":false,"id":"fa24018f-ebe6-4bc5-b7e7-3303f452c711"}]
+
+18:39:53.197 [main] DEBUG com.intuit.karate - request:
+4 > POST http://localhost:54205/api/todos
+4 > Content-Type: application/json; charset=UTF-8
+4 > Content-Length: 35
+4 > Host: localhost:54205
+4 > Connection: Keep-Alive
+4 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+4 > Accept-Encoding: gzip,deflate
+{"title":"Second","complete":false}
+
+18:39:53.247 [armeria-common-worker-kqueue-3-4] DEBUG com.intuit.karate.http.RequestCycle - POST /api/todos 200 [35 ms]
+18:39:53.251 [main] DEBUG com.intuit.karate - response time in milliseconds: 51
+4 < 200
+4 < content-type: application/json
+4 < content-length: 79
+4 < server: Armeria/1.25.2
+4 < date: Fri, 24 May 2024 13:09:53 GMT
+{"title":"Second","complete":false,"id":"7bb7b74f-0195-488b-a523-08130cb74fe7"}
+
+18:39:53.256 [main] DEBUG c.intuit.karate.core.ScenarioEngine - over-writing existing variable 'id' with new value: response.id
+18:39:53.260 [main] DEBUG com.intuit.karate - request:
+5 > GET http://localhost:54205/api/todos
+5 > Host: localhost:54205
+5 > Connection: Keep-Alive
+5 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.21)
+5 > Accept-Encoding: gzip,deflate
+
+
+18:39:53.318 [armeria-common-worker-kqueue-3-5] DEBUG com.intuit.karate.http.RequestCycle - GET /api/todos 200 [48 ms]
+18:39:53.321 [main] DEBUG com.intuit.karate - response time in milliseconds: 61
+5 < 200
+5 < content-type: application/json
+5 < content-length: 160
+5 < server: Armeria/1.25.2
+5 < date: Fri, 24 May 2024 13:09:53 GMT
+[{"title":"First","complete":false,"id":"fa24018f-ebe6-4bc5-b7e7-3303f452c711"},{"title":"Second","complete":false,"id":"7bb7b74f-0195-488b-a523-08130cb74fe7"}]
+
+18:39:54.589 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) classpath:app/api/simple/simple.feature
