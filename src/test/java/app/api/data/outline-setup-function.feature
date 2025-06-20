@@ -12,6 +12,7 @@ Feature: generating data using a function
 
   Scenario Outline:
     * print __row
+    * eval java.lang.Thread.sleep(10000)
 
     Examples:
       | karate.setup().generator |

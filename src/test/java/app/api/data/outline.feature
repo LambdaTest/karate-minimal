@@ -9,9 +9,10 @@ Feature: simple data driven testing
     * method post
     * match response == { id: '#string', title: '#(title)', complete: false }
     * status 200
+    * eval java.lang.Thread.sleep(20000)
 
     Examples:
       | title |
-      | One   |
-      | Two   |
-      | Three |
+      | One1   |
+      | Two1   |
+      | Three1 |
