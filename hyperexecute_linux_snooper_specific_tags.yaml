@@ -20,11 +20,11 @@ jobLabel: ['Karate', 'Snooper-remote', 'Gradle']
 scenarioCommandStatusOnly: true
 # For API scenarios to avoid marking of skip after execution
 
-project:
-  name: [DO NOT DELETE] Karate Gradle
-differentialUpload:
-  enabled: true
-  ttlHours: 1
+# project:
+#   name: [DO NOT DELETE] Karate Gradle
+# differentialUpload:
+#   enabled: true
+#   ttlHours: 1
 
 report: true
 partialReports:
