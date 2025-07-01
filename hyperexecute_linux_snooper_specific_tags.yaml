@@ -48,3 +48,7 @@ cacheDirectories:
 pre:
   - echo "Starting Test..."
   - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
+  
+runtime:
+    language: java
+    version: 11
