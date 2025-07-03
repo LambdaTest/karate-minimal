@@ -19,6 +19,13 @@ jobLabel: ['Karate', 'Snooper-remote', 'Gradle']
 
 scenarioCommandStatusOnly: true
 # For API scenarios to avoid marking of skip after execution
+
+project:
+  name: [DO NOT DELETE] Karate Gradle
+differentialUpload:
+  enabled: true
+  ttlHours: 1
+
 report: true
 partialReports:
   location: build
@@ -40,7 +47,9 @@ cacheDirectories:
 pre:
   - echo "Starting Test..."
   - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
-  
-runtime:
-    language: java
-    version: 11
+
+project:
+  name: DO_NOT_DELETE_Karate_Gradle
+differentialUpload:
+  enabled: true
+  ttlHours: 1
