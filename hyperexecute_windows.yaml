@@ -45,7 +45,6 @@ uploadArtefacts:
 cacheKey: '{{ checksum "build.gradle" }}'
 cacheDirectories:
   - .gradle
-  - gradle/wrapper
 
 pre:
   - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle
