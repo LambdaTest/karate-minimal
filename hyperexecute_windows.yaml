@@ -23,7 +23,7 @@ scenarioCommandStatusOnly: true
 # For API scenarios to avoid marking of skip after execution
 
 project:
-  name: [DO NOT DELETE] Karate Gradle
+  name: DO_NOT_DELETE_Karate_Gradle
 differentialUpload:
   enabled: true
   ttlHours: 1
