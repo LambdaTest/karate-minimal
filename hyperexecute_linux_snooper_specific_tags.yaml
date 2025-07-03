@@ -20,12 +20,6 @@ jobLabel: ['Karate', 'Snooper-remote', 'Gradle']
 scenarioCommandStatusOnly: true
 # For API scenarios to avoid marking of skip after execution
 
-project:
-  name: [DO NOT DELETE] Karate Gradle
-differentialUpload:
-  enabled: true
-  ttlHours: 1
-
 report: true
 partialReports:
   location: build
@@ -43,7 +37,6 @@ uploadArtefacts:
 cacheKey: '{{ checksum "build.gradle" }}'
 cacheDirectories:
   - .gradle
-  - gradle/wrapper
 
 pre:
   - echo "Starting Test..."
