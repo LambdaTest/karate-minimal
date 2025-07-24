@@ -1,0 +1,47 @@
+version: 0.1
+runson: linux
+
+autosplit: true
+concurrency: 1
+
+alwaysRunPostSteps: true
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: echo "classpath:apis/features/GetRequest.feature:23"
+
+testRunnerCommand: |
+  echo "Running test: $test"
+  gradle test --tests APIRunner -Dkarate.options="$test"
+
+
+jobLabel: ['Karate', 'Gradle', "ClassPath"]
+
+scenarioCommandStatusOnly: true
+# For API scenarios to avoid marking of skip after execution
+report: true
+partialReports:
+  location: build
+  type: html
+  frameworkName: karate
+
+uploadArtefacts:
+  - name: Log File
+    path:
+      - target/
+  - name: Karate Report
+    path:
+      - build/karate-reports/
+
+cacheKey: '{{ checksum "build.gradle" }}'
+cacheDirectories:
+  - .gradle
+
+pre:
+  - echo "Starting Test..."
+  - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
+
+runtime:
+  language: java
+  version: 11
