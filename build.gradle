@@ -11,7 +11,12 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/com.intuit.karate/karate-junit5
-    testImplementation('com.intuit.karate:karate-junit5:1.4.1')
+    // Karate JUnit5 runner
+    testImplementation 'com.intuit.karate:karate-junit5:1.4.1'
+
+    // Add JUnit 5 Jupiter API + engine
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 }
 
 test {
