@@ -10,14 +10,8 @@ repositories {
 }
 
 dependencies {
-    // Karate JUnit 5 runner
+    // https://mvnrepository.com/artifact/com.intuit.karate/karate-junit5
     testImplementation 'com.intuit.karate:karate-junit5:1.4.1'
-
-    // JUnit 5 API and Engine
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
-
-    // (Optional but helps with error clarity)
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
 }
 
