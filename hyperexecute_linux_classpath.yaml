@@ -44,4 +44,4 @@ pre:
 
 runtime:
   language: java
-  version: 11
+  version: 17
