@@ -1,0 +1,55 @@
+version: 0.1
+runson: linux
+
+autosplit: true
+concurrency: 2
+
+alwaysRunPostSteps: true
+
+testDiscovery:
+  type: raw
+  mode: remote
+  command: snooper --featureFilePaths=src/test/resources/apis/features --frameWork=java  --specificTags=@CreateNewUser @GetRequest
+
+testRunnerCommand: |
+  echo "Running test: $test"
+  gradle test --tests APIRunner  -Dkarate.options=$test -d
+
+jobLabel: ['Karate', 'Snooper-remote', 'Gradle']
+
+scenarioCommandStatusOnly: true
+# For API scenarios to avoid marking of skip after execution
+
+project:
+  name: [DO NOT DELETE] Karate Gradle
+differentialUpload:
+  enabled: true
+  ttlHours: 1
+
+report: true
+partialReports:
+  location: build
+  type: html
+  frameworkName: karate
+
+uploadArtefacts:
+  - name: Log File
+    path:
+      - target/
+  - name: Karate Report
+    path:
+        - build/karate-reports/
+
+cacheKey: '{{ checksum "build.gradle" }}'
+cacheDirectories:
+  - .gradle
+
+pre:
+  - echo "Starting Test..."
+  - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
+
+project:
+  name: DO_NOT_DELETE_Karate_Gradle
+differentialUpload:
+  enabled: true
+  ttlHours: 1
