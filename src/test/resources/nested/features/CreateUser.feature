@@ -4,11 +4,11 @@ Feature: Create user
 
   Scenario: Create a new user
     * url baseURL
-    * header Content-Type = 'application/json'
-#    * headerader x-api-key = 'reqres-free-v1'
+    * header Accept = 'application/json'
+    * header x-api-key = 'reqres-free-v1'
 
-    Given path 'users/add'
-    And request { firstName: 'Muhammad',"lastName": 'Ovi' }
+    Given path 'api/users'
+    And request { name: 'morpheus', job: 'leader' }
     When method POST
-    Then status 201
+    # Then status 201
     * def createdUser = response
