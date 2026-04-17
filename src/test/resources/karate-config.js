@@ -1,6 +1,6 @@
 function fn() {
   var config = { // base config JSON
-    baseURL : 'https://reqres.in/'
+    baseURL : 'https://dummyjson.com/',
   };
 
   //karate.log('Base URL : ' , config.baseURL);
