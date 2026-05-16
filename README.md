@@ -1,93 +1,126 @@
-# Overview
+# Run Karate Tests on TestMu AI (Formerly LambdaTest)
 
-This is a self-contained project that is great for training or demo-ing all capabilities of [Karate](https://karatelabs.io). It includes an app that has a working front-end UI and back-end API. Examples of API tests, API performance tests, API mocks and Web-Browser automation are included.
+<p align="center">
+  <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+  <a href="https://search.maven.org/artifact/com.intuit.karate/karate-core"><img src="https://img.shields.io/maven-central/v/com.intuit.karate/karate-core.svg?style=for-the-badge&labelColor=000000" alt="Maven Central"></a>
+  <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
+</p>
 
-An 8 minute video ideal for beginners can be found here. [Karate Kick Start - The TODO Sample and Demo Project](https://youtu.be/gDZWgV3OubY). No programming or automation experience is required.
+## Getting Started
 
-A longer video (20 minutes) which is a good introduction to Karate uses demos in this project and can be an additional reference: [API Testing with Karate](https://youtu.be/WT4gg7Jutzg).
+[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
-Use the official Karate IDE plugins for the best developer experience:
+With TestMu AI (Formerly LambdaTest), you can run Karate API tests, UI browser tests, API mocks, and API performance tests at scale on the TestMu AI cloud — using this self-contained demo project as your starting point.
 
-- [Karate extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=karatelabs.karate)
-- [Karate plugin for IntelliJ IDEA](https://plugins.jetbrains.com/plugin/19232-karate)
+- [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
 
-# Instructions
+### Prerequisites
 
-> You can use [GitHub Codespaces](https://github.com/karatelabs/karate/wiki/Get-Started:-GitHub-Codespaces) to open this project directly in your browswer ! The default image includes Java and Maven, so you can skip the "Prerequisites" section below and go directly to [Verify Setup](#verify-setup). Make sure you install the [Karate extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=karatelabs.karate) in your Codespace. The Karate extension for VS Code can also be run in a Docker based [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers).
+- Java JDK 11 or greater (OpenJDK also works)
+- Maven (or use the included Maven wrapper `mvnw`)
+- `JAVA_HOME` environment variable set
+- A TestMu AI (Formerly LambdaTest) account with your username and access key
 
-## Prerequisites
+### Setup
 
-- [Git](https://git-scm.com/download) - to clone this project, or you could just [download the source code as a ZIP file](https://github.com/karatelabs/karate-todo/archive/refs/heads/main.zip)
-- [Java JDK](https://www.oracle.com/java/technologies/downloads) - (at least version 11 or greater), [OpenJDK](https://jdk.java.net/) also works
-- [`JAVA_HOME`](https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux) environment variable set
+Clone and install dependencies:
 
-## Get Source Code
-
-- open a terminal in a folder in which `karate-todo` will be created
-- enter the following command: `git clone https://github.com/karatelabs/karate-todo.git`
-
-If you don't have Git installed, you can [download the source code as a ZIP file](https://github.com/karatelabs/karate-todo/archive/refs/heads/main.zip) and extract it. The folder you get may be called `karate-todo-main`, so just re-name it to `karate-todo`.
-
-## Verify Setup
-
-Open a terminal in the directory called `karate-todo`.
-
-If the following command runs the `ApiTest` fine, you are all set:
-
-| Windows           | Linux / Mac         |
-| ----------------- | ------------------- |
-| `mvnw clean test` | `./mvnw clean test` |
-
-## Running `karate-todo`
-
-> In the commands below, `mvn` will work if you have [Maven installed](https://github.com/karatelabs/karate/wiki/Get-Started:-Maven-and-Gradle). Else replace it with `./mvnw` or `mvnw` like shown above to use the [Maven wrapper](https://maven.apache.org/wrapper).
-
-Now you can run the `LocalRunner` class as JUnit test. You can do this from an IDE that has Java support.
-
-Or from the command-line:
-
+```bash
+git clone https://github.com/LambdaTest/karate-minimal && cd karate-minimal
 ```
+
+Set your credentials as environment variables.
+
+**macOS / Linux:**
+
+```bash
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+```
+
+**Windows:**
+
+```bash
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+```
+
+### Run tests
+
+Start the local app server:
+
+```bash
 mvn clean test -Dtest=LocalRunner
 ```
 
-Now you should see the front-end at http://localhost:9826
+Run API and UI tests (after the app is running on localhost:9826):
 
-To stop, just kill the process or stop the Java process from the IDE.
+```
+mvn clean test
+```
 
-## Running Tests
-
-After the app has been started on `localhost:9826`, you can run tests.
-
-One of the easiest ways to run tests, recommended for non-programmers or teams that are not familiar with Java, is to use [Visual Studio Code](https://github.com/karatelabs/karate/wiki/Get-Started:-Visual-Studio-Code).
-
-There are more tests and examples in this project, but the following are the simplest ones to get started with:
-
-### API Test
-
-- [api/simple.feature](src/test/java/app/api/simple/simple.feature)
-
-Documentation: [Karate API Testing](https://karatelabs.github.io/karate)
-
-### UI Test
-
-- [ui/simple.feature](src/test/java/app/ui/simple/simple.feature)
-
-Documentation: [Karate UI Testing](https://karatelabs.github.io/karate/karate-core)
-
-### API Mock
-
-- [mock/test.feature](src/test/java/app/mock/test.feature) - this would run the API test after starting the mock defined in [mock.feature](src/test/java/app/mock/mock.feature). Note how the same test ([simple.feature](src/test/java/app/api/simple/simple.feature)) works for both the "real" API and the mock.
-
-Documentation: [Karate API Mocks](https://karatelabs.github.io/karate/karate-netty)
-
-### API Performance Test
-
-To run performance test (after the app has been started on `localhost`):
+Run performance tests with Gatling:
 
 ```
 mvn test -P gatling
 ```
 
-The above command uses Maven and has to be run on the command-line. The entry point is [perf/TodoSimulation.scala](src/test/java/app/perf/TodoSimulation.scala). The Maven [pom.xml](pom.xml) has a `<profile>` called `gatling`, which sets up the performance test and the `karate-gatling` dependency.
+View results on your TestMu AI dashboard.
 
-Documentation: [Karate API Performance Testing](https://karatelabs.github.io/karate/karate-gatling)
+### Local testing with TestMu AI Tunnel
+
+To test locally hosted apps, set up the TestMu AI tunnel. OS-specific guides:
+
+- [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
+- [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
+- [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
+
+Add the following to your capabilities:
+
+```js
+tunnel: true,
+```
+
+## Contributions
+
+Contributions are welcome. Open an issue to discuss your idea before submitting a pull request. When reporting bugs, include your Java version, OS, and Maven/Gradle version.
+
+## TestMu AI (Formerly LambdaTest) Community
+
+Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
+  
+## TestMu AI (Formerly LambdaTest) Certifications
+
+Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) for testers, developers, and QA engineers. Validate your skills in Selenium, Cypress, Playwright, Appium, Espresso and more. Industry-recognized, shareable on LinkedIn, and built by practitioners, not marketers.
+
+## Learning Resources by TestMu AI (Formerly LambdaTest)
+
+Learn modern testing through tutorials, guides, videos, and weekly updates:
+
+* [TestMu AI Blog](https://www.testmuai.com/blog/)
+* [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
+* [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
+* [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
+  
+## LambdaTest is Now TestMu AI
+
+On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/), the world's first fully autonomous **Agentic AI Quality Engineering Platform**.
+
+Same team. Same infrastructure. Same customer accounts. All existing LambdaTest logins, scripts, capabilities, and integrations continue to work without change.
+
+Find the new home for [LambdaTest](https://www.testmuai.com).
+
+### How LambdaTest Evolved into TestMu AI
+
+In 2017, we launched LambdaTest with a simple mission: make testing fast, reliable, and accessible. As LambdaTest grew, we expanded into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the full depth of the testing lifecycle.
+
+As software development entered the AI era, testing had to evolve, too. We rebuilt the architecture to be AI-native from the ground up, with autonomous agents that **plan, author, execute, analyze, and optimize tests** while keeping humans in the loop. The platform integrates with your repos, CI, IDEs, and terminals, continuously learning from every code change and development signal.
+
+That evolution earned a new name: **TestMu AI**, built for an AI-first future of quality engineering. TestMu is not a new name for us. It is the name of our annual community conference, which has brought together 100,000+ quality engineers to discuss how AI would reshape testing, long before that became an industry norm. 
+
+What started as a high-performance cloud testing platform has transformed into an AI-native, multi-agent system powering a connected, end-to-end quality layer. That evolution defined a new identity: LambdaTest evolved into TestMu AI, built for an AI-first future of quality engineering.
+
+## Support
+
+Got a question? Email [support@testmuai.com](mailto:support@testmuai.com) or chat with us 24x7 from our chat portal.
