@@ -1,24 +1,23 @@
 version: 0.1
 runson: linux
 
-onpremEnv: ${onpremEnv}
+onpremEnv: ocp-pre-prod
 
 autosplit: true
-concurrency: 3
+concurrency: 2
 
 alwaysRunPostSteps: true
 
 testDiscovery:
   type: raw
   mode: remote
-  command: echo "classpath:nested/features/Main.feature"
+  command: snooper --featureFilePaths=src/test/resources/apis/features --frameWork=java  --specificTags=@CreateNewUser @GetRequest
 
 testRunnerCommand: |
   echo "Running test: $test"
-  gradle test --tests APIRunner -Dkarate.options="$test"
+  gradle test --tests APIRunner  -Dkarate.options=$test -d
 
-
-jobLabel: ['Karate', 'Gradle', "ClassPath"]
+jobLabel: ['Karate', 'Snooper-remote', 'Gradle', 'ocp-pre-prod']
 
 scenarioCommandStatusOnly: true
 # For API scenarios to avoid marking of skip after execution
@@ -34,7 +33,7 @@ uploadArtefacts:
       - target/
   - name: Karate Report
     path:
-      - build/karate-reports/
+        - build/karate-reports/
 
 cacheKey: '{{ checksum "build.gradle" }}'
 cacheDirectories:
@@ -45,5 +44,5 @@ pre:
   - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
 
 runtime:
-  language: java
-  version: 11
+    language: java
+    version: 11
