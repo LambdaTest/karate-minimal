@@ -1,0 +1,49 @@
+version: 0.1
+runson: win
+
+autosplit: true
+concurrency: 1
+
+alwaysRunPostSteps: true
+
+runtime:
+  language: java
+  version: 17
+
+testDiscovery:
+  type: raw
+  mode: remote
+  command: echo 'All Test'
+
+testRunnerCommand: |
+  .\\gradlew.bat test --tests TestRunner
+
+jobLabel: ['karate-gradle', 'report-all-features', 'win']
+
+scenarioCommandStatusOnly: true
+
+report: true
+partialReports:
+  location: build/karate-reports
+  type: html
+  frameworkName: karate
+
+uploadArtefacts:
+  - name: Karate Report
+    path:
+      - build/karate-reports/
+  - name: Build Output
+    path:
+      - build/
+  - name: Feature Files
+    path:
+      - src/
+
+cacheKey: '{{ checksum "build.gradle" }}'
+cacheDirectories:
+  - .gradle
+  - gradle/wrapper
+
+pre:
+  - echo "Starting Karate Gradle Test (Windows - All Features)..."
+  - .\\gradlew.bat dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
