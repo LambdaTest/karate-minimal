@@ -13,7 +13,7 @@ runtime:
 testDiscovery:
   type: raw
   mode: dynamic
-  command: grep -rl --include="*.feature" "" src/test/resources/apis/features
+  command: dir /s /b src\test\resources\apis\features\*.feature
 
 testRunnerCommand: .\\gradlew.bat test --tests APIRunner `-Dkarate.options="$test"
 
