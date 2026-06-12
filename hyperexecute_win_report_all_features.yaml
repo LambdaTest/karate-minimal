@@ -13,10 +13,10 @@ runtime:
 testDiscovery:
   type: raw
   mode: remote
-  command: echo 'All Test'
+  command: grep -rl --include="*.feature" "" src/test/resources/apis/features
 
 testRunnerCommand: |
-  .\\gradlew.bat test --tests TestRunner
+  .\\gradlew.bat test --tests TestRunner `-Dkarate.options="$test"
 
 jobLabel: ['karate-gradle', 'report-all-features', 'win']
 
