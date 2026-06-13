@@ -15,7 +15,7 @@ testDiscovery:
   mode: remote
   command: echo "classpath:nested/features/Main.feature"
 
-testRunnerCommand: .\\gradlew.bat test --tests APIRunner `-Dkarate.options=$test --no-daemon
+testRunnerCommand: gradle test --tests APIRunner `-Dkarate.options=$test --no-daemon
 
 jobLabel: ['karate-gradle', 'report-missing-features', 'win']
 
@@ -38,4 +38,4 @@ cacheDirectories:
 
 pre:
   - echo "Starting Karate Gradle Test (Windows - Missing Features)..."
-  - .\\gradlew.bat dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
+  - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle
