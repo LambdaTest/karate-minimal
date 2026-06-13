@@ -12,10 +12,12 @@ runtime:
 
 testDiscovery:
   type: raw
-  mode: dynamic
-  command: grep -rl --include="*.feature" "" src/test/resources/apis/features
+  mode: remote
+  command: echo "classpath:nested/features/Main.feature"
 
-testRunnerCommand: ./gradlew test --tests APIRunner -Dkarate.options="$test"
+testRunnerCommand: |
+  echo "Running test: $test"
+  ./gradlew test --tests APIRunner -Dkarate.options="$test"
 
 jobLabel: ['karate-gradle', 'report-all-features', 'linux']
 
@@ -23,7 +25,7 @@ scenarioCommandStatusOnly: true
 
 report: true
 partialReports:
-  location: build/karate-reports
+  location: build
   type: html
   frameworkName: karate
 
@@ -31,9 +33,6 @@ uploadArtefacts:
   - name: Karate Report
     path:
       - build/karate-reports/
-  - name: Build Output
-    path:
-      - build/
   - name: Feature Files
     path:
       - src/
@@ -41,7 +40,6 @@ uploadArtefacts:
 cacheKey: '{{ checksum "build.gradle" }}'
 cacheDirectories:
   - .gradle
-  - gradle/wrapper
 
 pre:
   - echo "Starting Karate Gradle Test (Linux - All Features)..."
