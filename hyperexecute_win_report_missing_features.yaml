@@ -8,14 +8,14 @@ alwaysRunPostSteps: true
 
 runtime:
   language: java
-  version: 11
+  version: 17
 
 testDiscovery:
   type: raw
   mode: remote
   command: echo "classpath:nested/features/Main.feature"
 
-testRunnerCommand: gradle test --tests APIRunner `-Dkarate.options=$test --no-daemon
+testRunnerCommand: .\\gradlew.bat test --tests APIRunner `-Dkarate.options=$test --no-daemon
 
 jobLabel: ['karate-gradle', 'report-missing-features', 'win']
 
@@ -38,4 +38,4 @@ cacheDirectories:
 
 pre:
   - echo "Starting Karate Gradle Test (Windows - Missing Features)..."
-  - gradle dependencies --refresh-dependencies --gradle-user-home=.gradle
+  - .\\gradlew.bat dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
