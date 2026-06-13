@@ -8,7 +8,7 @@ alwaysRunPostSteps: true
 
 runtime:
   language: java
-  version: 17
+  version: 11
 
 testDiscovery:
   type: raw
