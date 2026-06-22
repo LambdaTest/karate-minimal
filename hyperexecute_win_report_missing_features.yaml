@@ -1,0 +1,41 @@
+version: 0.1
+runson: win
+
+autosplit: true
+concurrency: 1
+
+alwaysRunPostSteps: true
+
+runtime:
+  language: java
+  version: 17
+
+testDiscovery:
+  type: raw
+  mode: remote
+  command: echo classpath:nested/features/Main.feature
+
+testRunnerCommand: .\\gradlew.bat test --tests APIRunner `-Dkarate.options=$test --no-daemon
+
+jobLabel: ['karate-gradle', 'report-missing-features', 'win']
+
+scenarioCommandStatusOnly: true
+
+report: true
+partialReports:
+  location: build
+  type: html
+  frameworkName: karate
+
+uploadArtefacts:
+  - name: Karate Report
+    path:
+      - build/karate-reports/
+
+cacheKey: '{{ checksum "build.gradle" }}'
+cacheDirectories:
+  - .gradle
+
+pre:
+  - echo "Starting Karate Gradle Test (Windows - Missing Features)..."
+  - .\\gradlew.bat dependencies --refresh-dependencies --gradle-user-home=.gradle --no-daemon
