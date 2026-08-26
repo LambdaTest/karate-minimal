@@ -5,9 +5,9 @@ Feature: Create user
   Scenario: Create a new user
     * url baseURL
     * header Content-Type = 'application/json'
-#    * headerader x-api-key = 'reqres-free-v1'
+    * header x-api-key = 'reqres-free-v1'
 
-    Given path 'users/add'
+    Given path 'users'
     And request { firstName: 'Muhammad',"lastName": 'Ovi' }
     When method POST
     Then status 201

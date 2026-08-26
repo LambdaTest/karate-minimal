@@ -6,10 +6,10 @@ Feature: Get user
     * def userId = __arg.id
     * url baseURL
     * header Content-Type = 'application/json'
-#    * header x-api-keykey = 'reqres-free-v1'
+    * header x-api-key = 'reqres-free-v1'
 
-    Given path 'user'
-    And param sortBy = 'firstName'
+    Given path 'users'
+    And param page = '2'
     When method GET
     Then status 200
     And print response

@@ -4,13 +4,7 @@ Feature: Get user from DB
   Background:
     * url baseURL
     * header Accept = 'application/json'
-#    * header x-api-key = 'reqres-free-v1'
-
-#  @Get_Example
-#  Scenario: Retrieve user list
-#    Given url 'https://reqres.in/api/users?page=2'
-#    Then status 200
-#    And print response
+    * header x-api-key = 'reqres-free-v1'
 
   @GetExistingUser
   Scenario: Retrieve existing user information
@@ -28,15 +22,15 @@ Feature: Get user from DB
 
   @GetExistingUserList
   Scenario: Retrieve existing user list
-    Given path 'user'
-    And param sortBy = 'firstName'
+    Given path 'users'
+    And param page = '2'
     When method GET
     Then status 200
     And print response
 
   @GetDelayedResponse
   Scenario: Retrieve delayed response
-    Given path 'products'
+    Given path 'users'
     And param delay = 3
     When method GET
     Then status 200
