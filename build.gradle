@@ -6,6 +6,8 @@ group = 'com.lambdatest.sample'
 version = '1.0-SNAPSHOT'
 
 repositories {
+    // Maven Central rate-limits HyperExecute VMs (HTTP 429); resolve through Google's Central mirror first.
+    maven { url "https://maven-central.storage-download.googleapis.com/maven2/" }
     mavenCentral()
 }
 
