@@ -4,7 +4,6 @@ Feature: Get user from DB
   Background:
     * url baseURL
     * header Accept = 'application/json'
-    * header x-api-key = 'reqres-free-v1'
 
   @GetExistingUser
   Scenario: Retrieve existing user information
