@@ -5,7 +5,6 @@ Feature: Create user
   Scenario: Create a new user
     * url baseURL
     * header Content-Type = 'application/json'
-    * header x-api-key = 'reqres-free-v1'
 
     Given path 'users'
     And request { firstName: 'Muhammad',"lastName": 'Ovi' }

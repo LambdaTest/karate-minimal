@@ -4,7 +4,6 @@ Feature: Create user in DB
   Background:
     * url baseURL
     * header Accept = 'application/json'
-    * header x-api-key = 'reqres-free-v1'
 
   @CreateNewUser
   Scenario: Create New User

@@ -6,7 +6,6 @@ Feature: Get user
     * def userId = __arg.id
     * url baseURL
     * header Content-Type = 'application/json'
-    * header x-api-key = 'reqres-free-v1'
 
     Given path 'users'
     And param page = '2'

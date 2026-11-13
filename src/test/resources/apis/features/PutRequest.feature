@@ -4,7 +4,6 @@ Feature: Update user in DB
   Background:
     * url baseURL
     * header Accept = 'application/json'
-    * header x-api-key = 'reqres-free-v1'
 
   @UpdateUser
   Scenario: Update Existing User
